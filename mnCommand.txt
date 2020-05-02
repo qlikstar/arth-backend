@@ -1,0 +1,1 @@
+mn create-app com-decipherx-projectarth-myapp --profile service --lang java --build gradle
