@@ -10,7 +10,7 @@ version "0.1"
 group "com.decipherx.projectarth"
 repositories {
 mavenCentral()
-	maven { url "https://jcenter.bintray.com" }
+	 maven { url "https://jcenter.bintray.com" }
 }
 configurations {
     // for dependencies that are needed for development only
@@ -32,6 +32,12 @@ dependencies {
 	implementation "io.micronaut.configuration:micronaut-hibernate-jpa"
 	implementation "io.micronaut.configuration:micronaut-jdbc-hikari"
 	implementation 'io.micronaut:micronaut-validation'
+
+	// Alpaca Code
+	compile files('../alpaca-trade-api-java/target/alpaca-trade-api-java-1.0.jar')
+	// https://mvnrepository.com/artifact/org.asynchttpclient/async-http-client
+	compile group: 'org.asynchttpclient', name: 'async-http-client', version: '2.12.1'
+
 	runtime "com.h2database:h2"
 	implementation "javax.annotation:javax.annotation-api"
 	implementation platform("io.micronaut:micronaut-bom:$micronautVersion")
@@ -44,7 +50,7 @@ dependencies {
 	testRuntime "org.junit.jupiter:junit-jupiter-engine"
 }
 test.classpath += configurations.developmentOnly
-mainClassName = "com.decipherx.projectarth.myapp.Application"
+mainClassName = "com.decipherx.projectarth.webapp.Application"
 // use JUnit 5 platform
 test {
     useJUnitPlatform()

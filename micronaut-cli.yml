@@ -1,5 +1,5 @@
 profile: service
-defaultPackage: com.decipherx.projectarth.myapp
+defaultPackage: com.decipherx.projectarth.webapp
 ---
 testFramework: junit
 sourceLanguage: java

@@ -19,7 +19,7 @@ datasources:
 jpa:
   default:
     packages-to-scan:
-      - 'com.decipherx.projectarth.myapp.domain'
+      - 'com.decipherx.projectarth.webapp.domain'
   properties:
     hibernate:
       hbm2ddl:
