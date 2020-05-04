@@ -17,6 +17,8 @@ public interface UserAccountService {
 
     Account createAccount(Sid userSid, Account account) throws ValidationException;
 
-    Set<Account> getAllAccounts(Sid userSid);
+    Set<Account> getAllAccountsByUser(Sid userSid);
+
+    Set<Account> getAllActiveAccounts();
 
 }

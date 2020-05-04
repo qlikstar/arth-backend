@@ -21,6 +21,7 @@ import java.net.URI;
 import java.util.Optional;
 import java.util.Set;
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.CompletionException;
 
 @Controller("/users")
 public class UserController {
@@ -49,7 +50,7 @@ public class UserController {
                 .getUserByUserSid(new Sid(userSid))
                 .thenApply(maybeUser -> {
                     if (maybeUser.isEmpty()) {
-                        throw new NotFoundException(String.format("Sid not found : %s", userSid));
+                        throw new CompletionException(new NotFoundException(String.format("Sid not found : %s", userSid)));
                     }
                     return HttpResponse.ok(maybeUser);
                 });
@@ -65,7 +66,7 @@ public class UserController {
     @Get("/{userSid}/accounts")
     public Set<Account> getAllAccounts(String userSid) throws ValidationException {
         Sid.isValidSid(userSid);
-        return userAccountService.getAllAccounts(Sid.convertToSid(userSid));
+        return userAccountService.getAllAccountsByUser(Sid.convertToSid(userSid));
     }
 
     protected URI location(String userSid) {

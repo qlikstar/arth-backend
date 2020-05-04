@@ -47,4 +47,9 @@ public class Sid {
         isValidSid(couldBeSid);
         return new Sid(couldBeSid);
     }
+
+    @Override
+    public String toString() {
+        return result;
+    }
 }

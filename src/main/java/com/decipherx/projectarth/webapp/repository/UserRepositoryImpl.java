@@ -60,5 +60,12 @@ public class UserRepositoryImpl implements UserRepository{
 
     }
 
+    @Override
+    @Transactional(readOnly = true)
+    public Set<Account> getAllActiveAccounts() {
+        Query query = entityManager.createQuery("SELECT account FROM Account account");
+        return (Set<Account>) query.getResultList().stream().collect(Collectors.toSet());
+    }
+
 
 }

@@ -15,4 +15,6 @@ public interface UserRepository {
     User save(@NotBlank String username, @NotBlank String password, @NotBlank String masterEmail);
 
     Set<Account> getAllAccountsByUserSid(@NotNull final Sid userSid);
+
+    Set<Account> getAllActiveAccounts();
 }

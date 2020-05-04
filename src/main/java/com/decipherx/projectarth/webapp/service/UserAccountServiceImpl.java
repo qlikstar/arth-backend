@@ -42,11 +42,16 @@ public class UserAccountServiceImpl implements UserAccountService{
         } else {
             throw new ValidationException("User not found : " + userSid.getValue());
         }
-
     }
 
     @Override
-    public Set<Account> getAllAccounts(Sid userSid) {
+    public Set<Account> getAllAccountsByUser(Sid userSid) {
         return userRepository.getAllAccountsByUserSid(userSid);
     }
+
+    @Override
+    public Set<Account> getAllActiveAccounts() {
+        return userRepository.getAllActiveAccounts();
+    }
+
 }
