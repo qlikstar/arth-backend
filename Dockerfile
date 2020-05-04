@@ -1,4 +1,4 @@
 FROM adoptopenjdk/openjdk11-openj9:jdk-11.0.1.13-alpine-slim
-COPY build/libs/com.decipherx.projectarth.webapp-*-all.jar myapp.jar
+COPY build/libs/com.decipherx.projectarth.webapp-*-all.jar arth-backend.jar
 EXPOSE 8080
-CMD java -Dcom.sun.management.jmxremote -noverify ${JAVA_OPTS} -jar myapp.jar
+CMD java -Dcom.sun.management.jmxremote -noverify ${JAVA_OPTS} -jar arth-backend.jar

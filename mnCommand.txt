@@ -1,1 +1,1 @@
-mn create-app com-decipherx-projectarth-myapp --profile service --lang java --build gradle
+mn create-app com-decipherx-projectarth-arth-backend --profile service --lang java --build gradle
